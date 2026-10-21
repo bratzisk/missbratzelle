@@ -1,0 +1,328 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bratzèlle ♡ The Dollhouse</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Playfair+Display:wght@700;800&display=swap');
+
+:root {
+  --pink: #ff4fa3;
+  --light: #fff0f7;
+  --dark: #24101d;
+  --hot: #e91e82;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: #fff8fc;
+  color: var(--dark);
+  font-family: 'DM Sans', sans-serif;
+}
+header {
+  background: #fff;
+  padding: 18px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  border-bottom: 1px solid #ffd3e8;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+.logo {
+  font-family: 'Playfair Display', serif;
+  color: var(--hot);
+  font-size: 23px;
+  font-weight: 800;
+}
+nav { display: flex; gap: 17px; flex-wrap: wrap; }
+nav a {
+  color: var(--dark);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+}
+nav a:hover { color: var(--hot); }
+.hero {
+  padding: 75px 7% 65px;
+  text-align: center;
+  background: linear-gradient(140deg,#ffd5e9,#fff1f8 55%,#ffc0df);
+  position: relative;
+  overflow: hidden;
+}
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #a12a68;
+}
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(48px, 11vw, 100px);
+  line-height: .95;
+  margin: 20px 0;
+  letter-spacing: -4px;
+  color: #ec238a;
+}
+.hero p {
+  max-width: 510px;
+  margin: 20px auto;
+  font-size: 14px;
+  line-height: 1.9;
+}
+.button {
+  display: inline-block;
+  background: var(--dark);
+  color: white;
+  padding: 14px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-top: 10px;
+}
+.button:hover { background: var(--hot); }
+.marquee {
+  padding: 13px;
+  text-align: center;
+  background: var(--hot);
+  color: white;
+  font-size: 10px;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+section { padding: 65px 7%; }
+.section-label {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--hot);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px,6vw,52px);
+  margin: 12px 0 20px;
+}
+.story {
+  max-width: 740px;
+  line-height: 2;
+  font-size: 14px;
+  color: #604653;
+}
+.story strong { color: var(--hot); }
+.dolls { background: #fff0f7; }
+.doll-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 18px;
+  margin-top: 32px;
+}
+.doll-card {
+  background: white;
+  border: 1px solid #ffd2e6;
+  padding: 10px 10px 20px;
+  text-align: center;
+  transition: transform .2s;
+}
+.doll-card:hover { transform: translateY(-5px); }
+.photo {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: linear-gradient(145deg,#ffe1ef,#f8b6d6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: #a12a68;
+  font-size: 12px;
+}
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.number {
+  font-size: 10px;
+  color: #e91e82;
+  letter-spacing: 3px;
+  margin-top: 17px;
+}
+.doll-card h3 {
+  font-family: 'Playfair Display',serif;
+  font-size: 25px;
+  margin: 7px 0;
+}
+.doll-card p {
+  color: #866474;
+  font-size: 11px;
+  line-height: 1.7;
+  margin: 0 5px;
+}
+.quote {
+  background: #29101f;
+  color: white;
+  text-align: center;
+  padding: 65px 7%;
+}
+.quote h2 { color: #ff80bd; }
+.quote p {
+  max-width: 550px;
+  margin: auto;
+  line-height: 1.9;
+  font-size: 14px;
+}
+footer {
+  padding: 30px 7%;
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #9a607e;
+  background: #fff;
+}
+@media(max-width:600px) {
+  header { padding: 15px 5%; flex-wrap: wrap; }
+  .logo { font-size: 20px; }
+  nav { gap: 12px; }
+  .doll-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
+  section { padding: 48px 6%; }
+  .hero { padding: 65px 6%; }
+  h1 { letter-spacing: -2px; }
+}
+@media(max-width:350px) {
+  .doll-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">BRATZÈLLE ♡</div>
+  <nav>
+    <a href="#home">HOME</a>
+    <a href="#story">THE STORY</a>
+    <a href="#girls">THE GIRLS</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="eyebrow">♡ six dolls. one dynasty. ♡</div>
+    <h1>THE<br>DOLLHOUSE.</h1>
+    <p>
+      Pretty faces, expensive taste and a little bit of trouble.
+      Bem-vinda ao universo Bratzèlle, onde ser icônica não é
+      uma escolha — é herança de família.
+    </p>
+    <a class="button" href="#girls">MEET THE DOLLS ↗</a>
+  </section>
+
+  <div class="marquee">
+    TOO GLAM TO GIVE A DAMN ✦ BRATZÈLLE FOREVER ✦
+  </div>
+
+  <section id="story">
+    <div class="section-label">01 — the family secret</div>
+    <h2>Not just pretty faces.</h2>
+    <div class="story">
+      <p>
+        Dizem que algumas garotas nasceram para seguir tendências.
+        As Bratzèlle nasceram para criá-las.
+      </p>
+      <p>
+        Uma linhagem de seis garotas com atitude de sobra, beleza
+        marcante e personalidades que jamais passam despercebidas.
+        Inspiradas pelo glamour das Bratz e pelo caos delicioso de
+        <strong>Mean Girls</strong>, elas sabem que reputação é tudo,
+        lealdade é poder e subestimar uma delas é um erro.
+      </p>
+      <p>
+        Entre segredos, rivalidades, cumplicidade e momentos dignos
+        de um filme, cada garota tem seu próprio brilho. Juntas,
+        elas são uma família que não precisa pedir licença para
+        dominar a cena.
+      </p>
+      <p><strong>Six girls. One name. Absolutely no competition.</strong></p>
+    </div>
+  </section>
+
+  <section class="dolls" id="girls">
+    <div class="section-label">02 — meet the icons</div>
+    <h2>Your favorite dolls.</h2>
+    <p class="story">
+      Seis personalidades, seis universos e uma única assinatura:
+      Bratzèlle. As fotos abaixo são espaços reservados para as
+      imagens reais de cada integrante.
+    </p>
+
+    <div class="doll-grid">
+      <article class="doll-card">
+        <div class="photo"><span>foto da Winter</span></div>
+        <div class="number">01 / THE BLONDE</div>
+        <h3>Winter</h3>
+        <p>Doce no olhar, inesquecível em qualquer lugar.</p>
+      </article>
+
+      <article class="doll-card">
+        <div class="photo"><span>foto da Snow</span></div>
+        <div class="number">02 / THE IT GIRL</div>
+        <h3>Snow</h3>
+        <p>Elegância silenciosa, presença impossível de ignorar.</p>
+      </article>
+
+      <article class="doll-card">
+        <div class="photo"><span>foto da Merliah</span></div>
+        <div class="number">03 / THE DIVA</div>
+        <h3>Merliah</h3>
+        <p>Energia de protagonista. O mundo é o seu palco.</p>
+      </article>
+
+      <article class="doll-card">
+        <div class="photo"><span>foto da Iskra</span></div>
+        <div class="number">04 / THE MUSE</div>
+        <h3>Iskra</h3>
+        <p>Charme natural e uma estética que dita tendências.</p>
+      </article>
+
+      <article class="doll-card">
+        <div class="photo"><span>foto da Digny</span></div>
+        <div class="number">05 / THE WILDCARD</div>
+        <h3>Digny</h3>
+        <p>Autêntica, magnética e impossível de copiar.</p>
+      </article>
+
+      <article class="doll-card">
+        <div class="photo"><span>foto da Kylie</span></div>
+        <div class="number">06 / THE REBEL</div>
+        <h3>Kylie</h3>
+        <p>Atitude de sobra. As regras não foram feitas para ela.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="quote">
+    <div class="section-label">the bratzèlle code</div>
+    <h2>“You can't sit with us.”</h2>
+    <p>
+      Não é sobre ser perfeita. É sobre saber quem você é,
+      proteger as suas garotas e nunca deixar ninguém apagar
+      o seu brilho. A coroa pode até ser rosa, mas a atitude
+      é inegociável.
+    </p>
+  </section>
+</main>
+
+<footer>
+  BRATZÈLLE DOLLHOUSE ♡ MADE WITH ATTITUDE · 2026
+</footer>
+
+</body>
+</html>
